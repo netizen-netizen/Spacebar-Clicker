@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Game Site</title>
+  <style>
+    body { text-align: center; font-family: Arial; }
+    button { font-size: 20px; padding: 10px; }
+  </style>
+</head>
+<body>
+  <h1>Click Game</h1>
+  <button onclick="score++">Click me</button>
+  <p id="score">Score: 0</p>
+
+  <script>
+    let score = 0;
+    setInterval(() => {
+      document.getElementById("score").innerText = "Score: " + score;
+    }, 100);
+  </script>
+</body>
+</html>
