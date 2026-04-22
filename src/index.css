@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  @apply box-border;
+}
+
+html {
+  @apply scroll-smooth;
+}
+
+body {
+  @apply antialiased;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  @apply w-2;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-600 rounded;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-500;
+}
+
+/* Input range styling */
+input[type='range'] {
+  -webkit-appearance: none;
+  appearance: none;
+  @apply cursor-pointer;
+}
+
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  @apply w-3 h-3 rounded-full bg-primary-500 cursor-pointer shadow transition hover:bg-primary-600 hover:shadow-lg;
+}
+
+input[type='range']::-moz-range-thumb {
+  @apply w-3 h-3 rounded-full bg-primary-500 cursor-pointer shadow transition border-0;
+}
+
+/* Custom checkbox */
+input[type='checkbox'] {
+  @apply cursor-pointer;
+}
+
+/* Animations */
+@keyframes slideInLeft {
+  from {
+    @apply transform -translate-x-full opacity-0;
+  }
+  to {
+    @apply transform translate-x-0 opacity-100;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    @apply opacity-0;
+  }
+  to {
+    @apply opacity-100;
+  }
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.3s ease-out;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  body {
+    @apply text-sm;
+  }
+
+  h1 {
+    @apply text-xl;
+  }
+
+  h2 {
+    @apply text-lg;
+  }
+}
